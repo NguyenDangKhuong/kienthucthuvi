@@ -1,0 +1,13 @@
+// keyframes
+@keyframes fadeinout {
+  0%,
+  10%,
+  90%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
+}
