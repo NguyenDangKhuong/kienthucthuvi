@@ -16,38 +16,6 @@
   display: flex;
 }
 
-.post{
-  width: 70%;
-  &__flex {
-    display: flex;
-  }
-  &__main-wrapper {
-    display: flex; 
-  }
-  &__main {
-    width: 70%;
-  }
-  &__main-image {
 
-  }
-  &__author {
-    font-weight: 700;
-    color: color(navy);
-    font-size: 12px;
-  }
-  &__divided {
-    margin: 0 5px;
-    font-size: 12px;
-  }
-  &__date {
-    font-size: 12px;
-  }
-  &__side {
-    width: 30%;
-  }
-}
 
-.sidebar {
-  width: 30%;
-}
 
