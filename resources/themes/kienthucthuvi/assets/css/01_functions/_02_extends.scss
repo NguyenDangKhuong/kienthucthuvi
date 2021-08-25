@@ -10,3 +10,15 @@
     display: block;
   }
 }
+
+%border-bottom-10 {
+  margin: 0 0 10px 0;
+  padding: 0 0 10px 0;
+  border-bottom: 1px solid color(white-smoke);
+}
+
+%border-bottom-20 {
+  margin: 0 0 20px 0;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid color(white-smoke);
+}

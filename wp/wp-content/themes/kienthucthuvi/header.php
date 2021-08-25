@@ -61,10 +61,7 @@
                     <?php endif ?>
                 </h1>
                 <div class="header__search-box">
-                    <form class="header__search-form">
-                        <input type="text" class="head__search-input" />
-                        <input type="submit" class="head__search-input-btn" />
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>
                 <div class="header__login">Đăng nhập</div>
             </div>

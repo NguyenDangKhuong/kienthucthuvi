@@ -15,5 +15,8 @@ if (!function_exists('kttv_theme_setup')) {
         //linl rss
         add_theme_support('automatic-feed-link');
         add_image_size('grid_post_thumbnail', 500, 300, true);
+        add_theme_support('post-formasts', array(
+            'quote'
+        ));
     }
 }

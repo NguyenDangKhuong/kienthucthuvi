@@ -1,4 +1,4 @@
-l<?php
+<?php
     if (!function_exists('kttv_custom_pagination')) {
         function kttv_custom_pagination(WP_Query $wp_query = null, $echo = true)
         {

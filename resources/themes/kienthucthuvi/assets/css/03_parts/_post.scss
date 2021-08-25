@@ -1,5 +1,4 @@
 .post {
-  width: 70%;
   &__list {
     display: grid;
     grid-template:
@@ -29,6 +28,9 @@
   &__flex {
     display: flex;
   }
+  &__link {
+    width: 100%;
+  }
   &__wrapper {
     display: flex;
     font-size: 12px;
@@ -50,7 +52,7 @@
   }
   &__author {
     font-weight: 700;
-    color: color(navy);
+    color: color(blue);
   }
   &__comment-icon {
     display: inline-block;

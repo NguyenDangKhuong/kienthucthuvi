@@ -16,3 +16,4 @@ guide
 npm-debug.log
 wp/wp-content/themes/*/mix-manifest.json
 wp/wp-content/themes/*/assets
+wp/wp-content/uploads

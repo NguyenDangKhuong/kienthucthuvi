@@ -3,6 +3,8 @@
     if (is_active_sidebar('kttv_primary_sidebar')) {
         dynamic_sidebar('kttv_primary_sidebar');
     }
+//     wpb_set_post_views(get_the_ID());
+//   wpb_get_post_views(get_the_ID());
     ?>
     <ul class="sidebar__list">
         <li class="sidebar__item">
