@@ -1,8 +1,3 @@
-// index
-* {
-  font-family: map-get($font-family, noto-sans);
-}
-
 .container {
   margin: 0 160px;
   @include sp() {
@@ -20,6 +15,274 @@
   padding: 0 15px 0 0;
 }
 
+.dual-section {
+  display: flex;
+}
 
+.post,
+.news,
+.investment,
+.tech {
+  &__item {
+    overflow: hidden;
+    padding: 10px 0;
+  }
+  &__flex {
+    display: flex;
+  }
+  &__link {
+    width: 100%;
+  }
+  &__wrapper {
+    display: flex;
+    font-size: 12px;
+    margin: 15px 0 20px;
+  }
+  &__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 60%;
+  }
+  &__info {
+    margin: 20px 0 0;
+  }
+  &__author {
+    font-weight: 200;
+    color: color(blue);
+    &:before {
+      content: 'by:';
+      color: color(night-rider);
+    }
+    &:after {
+      content: '';
+      width: 1px;
+      height: 10px;
+      margin: 0 10px;
+      border-right: 1px solid;
+      opacity: 0.6;
+      display: inline-block;
+      color: color(night-rider);
+    }
+  }
+  &__date {
+    &:after {
+      content: '';
+      width: 1px;
+      height: 10px;
+      margin: 0 10px;
+      border-right: 1px solid;
+      opacity: 0.6;
+      display: inline-block;
+      color: color(night-rider);
+    }
+  }
+  &__comment-icon {
+    display: inline-block;
+    color: color(black);
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    border: solid 1px currentColor;
+    border-radius: 2px;
+    margin: 0 0 0 10px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 7px;
+      width: 4px;
+      height: 4px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background-color: white;
+      border-bottom: solid 1px currentColor;
+      border-right: solid 1px currentColor;
+    }
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  &__title-first {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+  &__description {
+    font-weight: 100;
+  }
+}
 
+.news,
+.investment,
+.tech {
+  margin: 40px 0 0;
+  &__head {
+    border-bottom: 2px solid color(blue);
+    margin: 0 0 30px;
+  }
+  &__head-link {
+    display: inline-block;
+    padding: 10px 15px;
+    color: color(white);
+    background-color: color(blue);
+    cursor: pointer;
+  }
+  &__item {
+    @extend %border-bottom-10;
+    &:last-child {
+      border: none;
+    }
+    &:nth-last-child(2) {
+      border: none;
+    }
+  }
+}
 
+.post {
+  &__list {
+    display: grid;
+    grid-template:
+      'prm1 prm1 prm2'
+      'snd1 snd2 snd3' / 1fr 1fr 1fr;
+    column-gap: 20px;
+  }
+  &__item {
+    &:nth-child(1) {
+      grid-area: prm1;
+    }
+    &:nth-child(2) {
+      grid-area: prm2;
+    }
+    &:nth-child(3) {
+      grid-area: snd1;
+    }
+    &:nth-child(4) {
+      grid-area: snd2;
+    }
+    &:nth-child(5) {
+      grid-area: snd3;
+    }
+  }
+  &__first,
+  &__second {
+    padding: 0;
+  }
+  &__small {
+    .post__description {
+      display: none;
+    }
+  }
+}
+
+.news {
+  &__item {
+    &:nth-last-child(2) {
+      border: none;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 20px;
+  }
+  &__small {
+    padding: 0;
+    .news__link {
+      display: flex;
+    }
+    .news__title {
+      font-size: 14px;
+    }
+    .news__image-wrapper {
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .news__image {
+      padding-top: 66%;
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .news__info {
+      margin: 0;
+    }
+    .news__description {
+      display: none;
+    }
+  }
+  &__first,
+  &__second {
+    @extend %border-bottom-20;
+    padding: 0 0 20px 0;
+  }
+}
+
+.investment {
+  margin: 60px 10px 0 0;
+  &__first {
+    @extend %border-bottom-20;
+    padding: 0 0 20px 0;
+  }
+  &__small,
+  &__second {
+    .investment__link {
+      display: flex;
+    }
+    .investment__title {
+      font-size: 14px;
+    }
+    .investment__image-wrapper {
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .investment__image {
+      padding-top: 66%;
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .investment__info {
+      margin: 0;
+    }
+    .investment__description {
+      display: none;
+    }
+  }
+}
+
+.tech {
+  margin: 60px 0 0 10px;
+  &__first {
+    @extend %border-bottom-20;
+    padding: 0 0 20px 0;
+  }
+  &__small,
+  &__second {
+    .tech__link {
+      display: flex;
+    }
+    .tech__title {
+      font-size: 14px;
+    }
+    .tech__image-wrapper {
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .tech__image {
+      padding-top: 66%;
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .tech__info {
+      margin: 0;
+    }
+    .tech__description {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.popular,
+.recent {
+  color: color(white);
+  &__item {
+    @extend %border-bottom-20;
+    border-bottom: 1px solid color(light-nero);
+    &:first-child {
+      padding: 30px 0 20px;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  &__link {
+    display: flex;
+  }
+  &__title {
+    font-size: 14px;
+    color: color(white);
+    font-weight: 700;
+  }
+  &__image-wrapper {
+    width: 120px;
+    margin: 0 20px 0 0;
+  }
+  &__image {
+    padding-top: 66%;
+    width: 120px;
+    margin: 0 20px 0 0;
+  }
+  &__info {
+    margin: 5px 0 0;
+  }
+  &__description {
+    display: none;
+  }
+  &__wrapper {
+    display: flex;
+    font-size: 12px;
+    margin: 15px 0 20px;
+  }
+  &__author {
+    font-weight: 200;
+    color: color(gray);
+    &:before {
+      content: 'by:';
+      color: color(gray);
+    }
+    &:after {
+      content: '';
+      width: 1px;
+      height: 10px;
+      margin: 0 10px;
+      border-right: 1px solid;
+      opacity: 0.6;
+      display: inline-block;
+      color: color(gray);
+    }
+  }
+  &__date {
+    color: color(gray);
+    &:after {
+      content: '';
+      width: 1px;
+      height: 10px;
+      margin: 0 10px;
+      border-right: 1px solid;
+      opacity: 0.6;
+      display: inline-block;
+      color: color(gray);
+    }
+  }
+  &__comment-wrapper {
+    color: color(gray);
+  }
+  &__comment-icon {
+    display: inline-block;
+    color: color(gray);
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    border: solid 1px currentColor;
+    border-radius: 2px;
+    margin: 0 0 0 10px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 7px;
+      width: 4px;
+      height: 4px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      border-bottom: solid 1px currentColor;
+      border-right: solid 1px currentColor;
+    }
+  }
+}

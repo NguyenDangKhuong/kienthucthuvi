@@ -5,9 +5,10 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" id="js-viewport">
-    <!-- <link rel="shortcut icon" href="<?= URL_FAVICON ?>">
-    <link rel="apple-touch-icon-precomposed" href="<?= URL_TOUCH_ICON ?>">
-    <link rel="stylesheet" href="<?= URL_APP_CSS ?>"> -->
+    <link rel="shortcut icon" href="/wp-content/themes/kienthucthuvi/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/wp-content/themes/kienthucthuvi/assets/images/favicon.ico" type="image/x-icon">
+    <!-- <link rel="apple-touch-icon-precomposed" href="<?= URL_TOUCH_ICON ?>"> -->
+    <!-- <link rel="stylesheet" href="<?= URL_APP_CSS ?>"> -->
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat"> -->
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inter"> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.1.0/dist/viewport-extra.min.js"></script> -->
@@ -43,27 +44,27 @@
     <div class="header__container">
         <div class="container">
             <div class="header">
-                <h1 class="header__logo">
+                <div class="header__logo">
                     <?php if (is_home()) : ?>
                         <h1>
                             <a href="<?php echo home_url(); ?>">
-                                Kienthucthuvi
-                                <!-- <img class="header-logo-image" src="<?php // echo resolve_uri('/assets/svg/logo.svg'); 
-                                                                            ?>" alt="LIG Vietnam" /> -->
+                                <img class="header__logo-image" src="/wp-content/themes/kienthucthuvi/assets/svg/logo.svg" alt="Kienthucthuvi.org" />
                             </a>
                         </h1>
                     <?php else : ?>
                         <a href="<?php echo home_url(); ?>">
-                            Kienthucthuvi
-                            <!-- <img class="header-logo-image" src="<?php // echo resolve_uri('/assets/svg/logo.svg'); 
-                                                                        ?>" alt="LIG Vietnam" /> -->
+                            <img class="header__logo-image" src="/wp-content/themes/kienthucthuvi/assets/svg/logo.svg" alt="Kienthucthuvi.org" />
                         </a>
                     <?php endif ?>
-                </h1>
+                </div>
                 <div class="header__search-box">
                     <?php get_search_form(); ?>
                 </div>
-                <div class="header__login">Đăng nhập</div>
+                <div class="header__menu-btn">
+                    <span class="header__menu-btn-span"></span>
+                    <span class="header__menu-btn-span"></span>
+                    <span class="header__menu-btn-span"></span>
+                </div>
             </div>
         </div>
     </div>
@@ -71,13 +72,13 @@
         <div class="container">
             <?php
             // if(has_nav_menu('kttv_primary_menu')){
-                wp_nav_menu(array(
-                    'theme-location' => 'kttv_primary_menu',
-                    'container' => false,
-                    'fallback_cb' => false,
-                    'depth' => 5,
-                    'walker' => new KTTV_Custom_Nav_Walker()
-                ));
+            wp_nav_menu(array(
+                'theme-location' => 'kttv_primary_menu',
+                'container' => false,
+                'fallback_cb' => false,
+                'depth' => 5,
+                'walker' => new KTTV_Custom_Nav_Walker()
+            ));
             // }
             ?>
         </div>

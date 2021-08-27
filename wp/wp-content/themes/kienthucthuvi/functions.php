@@ -24,6 +24,8 @@ function custom_theme_setup() {
 add_action( 'after_setup_theme', 'custom_theme_setup' );
 add_action( 'widgets_init', 'kttv_sidebar_init' );
 
+
+//poppular
 function wpb_set_post_views($postID) {
     $count_key = 'wpb_post_views_count';
     $count = get_post_meta($postID, $count_key, true);
