@@ -1,0 +1,131 @@
+.search {
+  &__selection {
+    background: color(yellow);
+  }
+  &__result {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  &__item {
+    overflow: hidden;
+    padding: 10px 0;
+  }
+  &__link {
+    display: flex;
+    @include sp() {
+        display: block;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    font-size: 12px;
+    margin: 15px 0 20px;
+    @include sp() {
+      margin: 10px 0;
+    }
+  }
+  &__image-wrapper {
+    width: 35%;
+    margin: 0 20px 0 0;
+    @include sp() {
+        width: 100%;
+    }
+  }
+  &__image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 0;
+    padding-top: 80%;
+  }
+  &__info {
+    width: 70%;
+    @include sp() {
+      margin: 10px 0 0;
+      width: 100%;
+    }
+  }
+  &__author {
+    font-weight: 200;
+    color: color(blue);
+    &:before {
+      content: 'by:';
+      color: color(night-rider);
+    }
+    &:after {
+      content: '';
+      width: 1px;
+      height: 10px;
+      margin: 0 10px;
+      border-right: 1px solid;
+      opacity: 0.6;
+      display: inline-block;
+      color: color(night-rider);
+    }
+  }
+  &__date {
+    &:after {
+      content: '';
+      width: 1px;
+      height: 10px;
+      margin: 0 10px;
+      border-right: 1px solid;
+      opacity: 0.6;
+      display: inline-block;
+      color: color(night-rider);
+    }
+    @include sp() {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__comment {
+    @include sp() {
+      display: none;
+    }
+  }
+  &__comment-icon {
+    display: inline-block;
+    color: color(black);
+    position: absolute;
+    width: 15px;
+    height: 10px;
+    border: solid 1px currentColor;
+    border-radius: 2px;
+    margin: 0 0 0 10px;
+    @include sp() {
+      display: none;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 7px;
+      width: 4px;
+      height: 4px;
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+      background-color: white;
+      border-bottom: solid 1px currentColor;
+      border-right: solid 1px currentColor;
+    }
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  &__title-first {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+  &__description {
+    font-weight: 100;
+  }
+}

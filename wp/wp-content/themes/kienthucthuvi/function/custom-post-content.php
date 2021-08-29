@@ -35,8 +35,7 @@ if (!function_exists('kttv_post_excerpt')) {
             array_pop($excerpt);
             $excerpt = implode(" ", $excerpt);
             // highlight keywords
-            $excerpt = preg_replace('/(' . $keys . ')/iu', '<strong class="search__selection"></strong>', $excerpt)
-                . '... <b><a class="ml-2 mr-2" href="' . get_permalink($id_post) . '">' . 'Xem thêm' . '</a></b>';
+            $excerpt = preg_replace('/(' . $keys . ')/iu', '<strong class="search__selection"></strong>', $excerpt) . '... Xem thêm';
             echo $excerpt;
         }
     }

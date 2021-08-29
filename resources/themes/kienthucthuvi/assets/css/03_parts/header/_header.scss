@@ -12,6 +12,7 @@
     height: 80px;
     &--thinner {
       height: 50px;
+      box-shadow: 0 0 5px color(gray);
       .header {
         height: 50px;
       }
@@ -20,6 +21,9 @@
         &:after {
           top: 22px !important;
         }
+      }
+      .menu__multi-level {
+        top: 50px
       }
       .header__logo-image {
         width: 70px;
