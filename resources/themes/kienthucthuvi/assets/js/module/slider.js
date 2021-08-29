@@ -3,7 +3,7 @@ const $prevBtn = document.querySelector('.project__prev')
 const $nextBtn = document.querySelector('.project__next')
 const sliderLength = $sliderItem.length
 
-export default class Menu {
+export default class Slider {
   constructor() {
     init()
 

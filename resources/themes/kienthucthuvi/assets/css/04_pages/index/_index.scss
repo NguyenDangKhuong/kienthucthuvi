@@ -1,28 +1,39 @@
 .container {
   margin: 0 160px;
   @include sp() {
-    margin: 0 30px;
+    margin: 0 20px;
   }
 }
 
 .content {
   margin: 30px 0 0;
   display: flex;
+  @include sp() {
+    display: block;
+  }
 }
 
 .main {
   width: 70%;
   padding: 0 15px 0 0;
+  @include sp() {
+    width: 100%;
+    padding: unset;
+  }
 }
 
 .dual-section {
   display: flex;
+  @include sp() {
+    display: block;
+  }
 }
 
 .post,
 .news,
 .investment,
-.tech {
+.tech,
+.popular-sidebar {
   &__item {
     overflow: hidden;
     padding: 10px 0;
@@ -37,6 +48,9 @@
     display: flex;
     font-size: 12px;
     margin: 15px 0 20px;
+    @include sp() {
+      margin: 10px 0;
+    }
   }
   &__image {
     background-position: center;
@@ -51,6 +65,9 @@
   }
   &__info {
     margin: 20px 0 0;
+    @include sp() {
+      margin: 10px 0 0;
+    }
   }
   &__author {
     font-weight: 200;
@@ -81,6 +98,16 @@
       display: inline-block;
       color: color(night-rider);
     }
+    @include sp() {
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &__comment {
+    @include sp() {
+      display: none;
+    }
   }
   &__comment-icon {
     display: inline-block;
@@ -91,6 +118,9 @@
     border: solid 1px currentColor;
     border-radius: 2px;
     margin: 0 0 0 10px;
+    @include sp() {
+      display: none;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -121,8 +151,12 @@
 
 .news,
 .investment,
-.tech {
+.tech,
+.popular-sidebar {
   margin: 40px 0 0;
+  @include sp() {
+    margin: 20px 0 0;
+  }
   &__head {
     border-bottom: 2px solid color(blue);
     margin: 0 0 30px;
@@ -139,9 +173,6 @@
     &:last-child {
       border: none;
     }
-    &:nth-last-child(2) {
-      border: none;
-    }
   }
 }
 
@@ -152,6 +183,9 @@
       'prm1 prm1 prm2'
       'snd1 snd2 snd3' / 1fr 1fr 1fr;
     column-gap: 20px;
+    @include sp() {
+      display: block;
+    }
   }
   &__item {
     &:nth-child(1) {
@@ -174,9 +208,27 @@
   &__second {
     padding: 0;
   }
+  &__first,
   &__small {
     .post__description {
       display: none;
+    }
+  }
+  &__first,
+  &__second,
+  &__small {
+    @include sp() {
+      padding: 20px 0;
+      border-bottom: 1px solid color(white-smoke);
+      &:first-child {
+        padding: 0 0 20px 0;
+      }
+      &:last-child {
+        border: none;
+      }
+      .post__description {
+        display: block;
+      }
     }
   }
 }
@@ -185,35 +237,65 @@
   &__item {
     &:nth-last-child(2) {
       border: none;
+      @include sp() {
+        border-bottom: 1px solid color(white-smoke);
+      }
     }
   }
   &__list {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 20px;
+    @include sp() {
+      display: block;
+    }
   }
   &__small {
     padding: 0;
+    @include sp() {
+      padding: 10px 0 20px 0;
+    }
     .news__link {
       display: flex;
+      @include sp() {
+        display: block;
+      }
     }
     .news__title {
       font-size: 14px;
+      @include sp() {
+        font-size: 18px;
+      }
     }
     .news__image-wrapper {
       width: 120px;
       margin: 0 20px 0 0;
+      @include sp() {
+        width: unset;
+        margin: unset;
+      }
     }
     .news__image {
       padding-top: 66%;
       width: 120px;
       margin: 0 20px 0 0;
+      @include sp() {
+        padding-top: 60%;
+        width: unset;
+        margin: 0;
+      }
     }
     .news__info {
       margin: 0;
+      @include sp() {
+        margin: 10px 0 0;
+      }
     }
     .news__description {
       display: none;
+      @include sp() {
+        display: block;
+      }
     }
   }
   &__first,
@@ -225,63 +307,159 @@
 
 .investment {
   margin: 60px 10px 0 0;
+  @include sp() {
+    margin: 40px 0 0;
+  }
   &__first {
     @extend %border-bottom-20;
     padding: 0 0 20px 0;
   }
   &__small,
   &__second {
+    padding: 0;
+    @include sp() {
+      padding: 10px 0 20px 0;
+    }
     .investment__link {
       display: flex;
+      @include sp() {
+        display: block;
+      }
     }
     .investment__title {
       font-size: 14px;
+      @include sp() {
+        font-size: 18px;
+      }
     }
     .investment__image-wrapper {
       width: 120px;
       margin: 0 20px 0 0;
+      @include sp() {
+        width: unset;
+        margin: unset;
+      }
     }
     .investment__image {
       padding-top: 66%;
       width: 120px;
       margin: 0 20px 0 0;
+      @include sp() {
+        padding-top: 60%;
+        width: unset;
+        margin: 0;
+      }
     }
     .investment__info {
       margin: 0;
+      @include sp() {
+        margin: 10px 0 0;
+      }
     }
     .investment__description {
       display: none;
+      @include sp() {
+        display: block;
+      }
     }
   }
 }
 
 .tech {
   margin: 60px 0 0 10px;
+  @include sp() {
+    margin: 40px 0 0;
+  }
   &__first {
     @extend %border-bottom-20;
     padding: 0 0 20px 0;
   }
   &__small,
   &__second {
+    padding: 0;
+    @include sp() {
+      padding: 10px 0 20px 0;
+    }
     .tech__link {
       display: flex;
+      @include sp() {
+        display: block;
+      }
     }
     .tech__title {
       font-size: 14px;
+      @include sp() {
+        font-size: 18px;
+      }
     }
     .tech__image-wrapper {
       width: 120px;
       margin: 0 20px 0 0;
+      @include sp() {
+        width: unset;
+        margin: unset;
+      }
     }
     .tech__image {
       padding-top: 66%;
       width: 120px;
       margin: 0 20px 0 0;
+      @include sp() {
+        padding-top: 60%;
+        width: unset;
+        margin: 0;
+      }
     }
     .tech__info {
       margin: 0;
+      @include sp() {
+        margin: 10px 0 0;
+      }
     }
     .tech__description {
+      display: none;
+      @include sp() {
+        display: block;
+      }
+    }
+  }
+}
+
+.popular-sidebar {
+  margin: unset;
+  &__main-title {
+    color: color(white);
+    background: color(nero);
+    padding: 12px 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 0 0 30px;
+  }
+  &__first {
+    @extend %border-bottom-20;
+    padding: 0 0 20px 0;
+  }
+  &__small,
+  &__second {
+    .popular-sidebar__link {
+      display: flex;
+    }
+    .popular-sidebar__title {
+      font-size: 14px;
+    }
+    .popular-sidebar__image-wrapper {
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .popular-sidebar__image {
+      padding-top: 66%;
+      width: 120px;
+      margin: 0 20px 0 0;
+    }
+    .popular-sidebar__info {
+      margin: 0;
+    }
+    .popular-sidebar__description {
       display: none;
     }
   }

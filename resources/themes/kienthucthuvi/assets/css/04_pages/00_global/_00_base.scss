@@ -1,5 +1,6 @@
 html {
   @include font();
+  scroll-behavior: smooth;
 }
 
 [data-svg-sprite] {

@@ -68,10 +68,16 @@
       opacity: 0.6;
       display: inline-block;
       color: color(gray);
+      @include sp() {
+        display: none;
+      }
     }
   }
   &__comment-wrapper {
     color: color(gray);
+    @include sp() {
+      display: none;
+    }
   }
   &__comment-icon {
     display: inline-block;

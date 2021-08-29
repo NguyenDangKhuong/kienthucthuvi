@@ -77,8 +77,11 @@
 <section class="copyright">
     @<?php echo date("Y"); ?> - All Right Reserved. Designed and Developed by <div class="copyright__tui">NDK</div>
 </section>
+<div class="scroll-top">
+    <div class="scroll-top__icon"></div>
+</div>
 <?php wp_footer(); ?>
-
+<script src="<?= URL_APP_JS ?>" async></script>
 </body>
 
 </html>

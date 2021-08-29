@@ -2407,7 +2407,7 @@ function comment_form( $args = array(), $post_id = null ) {
 			),
 			sprintf(
 				'<label for="wp-comment-cookies-consent">%s</label>',
-				__( 'Save my name, email, and website in this browser for the next time I comment.' )
+				__( 'Lưu tên, email và trang web của tôi trong trình duyệt này cho lần tôi nhận xét tiếp theo.' )
 			)
 		);
 

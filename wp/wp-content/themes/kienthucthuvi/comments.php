@@ -34,7 +34,7 @@ function kttv_show_comment($comment, $args, $depth)
 }
 ?>
 <div class="comment-list">
-    <h4 class="comment-list-title">
+    <h4 class="comment-list__title">
         <?php
         comments_number(
             'Không có bình luận',
@@ -85,7 +85,8 @@ function kttv_show_comment($comment, $args, $depth)
         'submit_button' => '<button class="comment__button" type="submit" name="submit">Bình luận</button>',
         'title_reply_before' => '<div class="comment__title">',
         'title_reply'   => 'Viết bình luận',
-        'title_reply_after' =>      '</div>'
+        'title_reply_after' =>      '</div>',
+        'comment_notes_before' => 'Địa chỉ email của bạn sẽ không được công khai. Các trường bắt buộc được đánh dấu *',
     ));
     ?>
 </div>

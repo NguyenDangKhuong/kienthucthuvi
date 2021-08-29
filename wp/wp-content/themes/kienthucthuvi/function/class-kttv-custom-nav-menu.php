@@ -5,12 +5,12 @@ class KTTV_Custom_Nav_Walker extends Walker_Nav_Menu
     public function start_lvl(&$output, $depth = 0, $agrs = array())
     {
         $class_ul = '';
-        if($depth === 0) {
-            $class_ul .= ' multi-level ';
+        if ($depth === 0) {
+            $class_ul .= ' menu__multi-level ';
         } else if ($depth > 0) {
-            $class_ul .= ' end-level ';
+            $class_ul .= ' menu__end-level ';
         }
-        $output .= '<ul class="dropdown-menu' . $class_ul .'">';
+        $output .= '<ul class="menu__dropdown' . $class_ul . '">';
     }
 
     public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
@@ -24,18 +24,19 @@ class KTTV_Custom_Nav_Walker extends Walker_Nav_Menu
         $class_li = implode(' ', apply_filters('nav_menu_css_class', array_filter($array_class_li), $item, $args));
         //kiểm tra có con thì thêm class
         if ($args->has_children && $depth === 0) {
-            $class_li .= ' dropdown ';
+            $class_li .= ' menu__item-top ';
         } else if ($args->has_children && $depth > 0) {
-            $class_li .= ' dropdown-submenu ';
+            $class_li .= ' menu__item-submenu ';
         }
         //kiểm tra link có active hay không
-        if (in_array('current-menu-item', $array_class_li)) {
-            $class_a .= ' active ';
+        if (in_array('current-menu-item', $array_class_li) || in_array('current-menu-parent', $array_class_li) || in_array('current-menu-ancestor', $array_class_li)) {
+            $class_li .= ' menu__item--active ';
+            $class_a .= 'menu__link--active';
         }
-        $class_li = !empty($class_li) ? ' class="' . esc_attr($class_li) . '" ' : '';
-        $class_a = !empty($class_a) ? ' class="' . esc_attr($class_a) . '" ' : '';
+        $class_li = !empty($class_li) ? ' class="menu__item ' . esc_attr($class_li) . '" ' : '';
+        $class_a = !empty($class_a) ? ' class="menu__link ' . esc_attr($class_a) . '" ' : 'class="menu__link"';
 
-        $id_li = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
+        $id_li = apply_filters('nav_menu_item_id', 'menu__item-' . $item->ID, $item, $args);
         $id_li = !empty($id_li) ? ' id="' . esc_attr($id_li) . '" ' : '';
 
         //ghép nối thẻ li
@@ -51,7 +52,7 @@ class KTTV_Custom_Nav_Walker extends Walker_Nav_Menu
         if ($args->has_children) {
             $atts['href']           = '#';
             // $atts['data-toggle']    = 'dropdown';
-            $atts['class']            = 'dropdown-toggle';
+            $atts['class']            = 'menu__link';
         } else {
             $atts['href'] = !empty($item->url) ? $item->url : '';
         }
@@ -70,7 +71,7 @@ class KTTV_Custom_Nav_Walker extends Walker_Nav_Menu
         $item_output = $args->before;
         $item_output .= '<a' . $attr_a . ' ' . $class_a . '>';
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-        $item_output .= ($args->has_children && $depth === 0) ? ' <i class=""></i></a>' : '</a>';
+        $item_output .= ($args->has_children && $depth === 0) ? ' <i class="menu__icon"></i></a>' : '</a>';
         $item_output .= $args->after;
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }

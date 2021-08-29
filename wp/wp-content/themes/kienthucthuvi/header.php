@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0" id="js-viewport">
     <link rel="shortcut icon" href="/wp-content/themes/kienthucthuvi/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/wp-content/themes/kienthucthuvi/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
     <!-- <link rel="apple-touch-icon-precomposed" href="<?= URL_TOUCH_ICON ?>"> -->
     <!-- <link rel="stylesheet" href="<?= URL_APP_CSS ?>"> -->
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat"> -->
@@ -57,29 +59,60 @@
                         </a>
                     <?php endif ?>
                 </div>
-                <div class="header__search-box">
-                    <?php get_search_form(); ?>
-                </div>
-                <div class="header__menu-btn">
-                    <span class="header__menu-btn-span"></span>
-                    <span class="header__menu-btn-span"></span>
-                    <span class="header__menu-btn-span"></span>
+                <section class="header__menu is-pc-show">
+                    <?php
+                    // if(has_nav_menu('kttv_primary_menu')){
+                    wp_nav_menu(array(
+                        'theme-location' => 'kttv_primary_menu',
+                        'container' => false,
+                        'fallback_cb' => false,
+                        'depth' => 5,
+                        'walker' => new KTTV_Custom_Nav_Walker()
+                    ));
+                    // }
+                    ?>
+                </section>
+                <div class="header__search">
+                    <div class="header__search-box">
+                        <?php get_search_form(); ?>
+                    </div>
+                    <div class="header__menu-btn">
+                        <span class="header__menu-btn-span"></span>
+                        <span class="header__menu-btn-span"></span>
+                        <span class="header__menu-btn-span"></span>
+                    </div>
                 </div>
             </div>
+            <div class="header__navigation">
+                <div class="navigation">
+                    <div class="navigation__icon">
+                        <span class="navigation__icon-span"></span>
+                        <span class="navigation__icon-span"></span>
+                    </div>
+                    <div class="header__logo">
+                        <img class="header__logo-image" src="/wp-content/themes/kienthucthuvi/assets/svg/logo.svg" alt="Kienthucthuvi.org" />
+                    </div>
+                    <?php
+                    // if(has_nav_menu('kttv_primary_menu')){
+                    wp_nav_menu(array(
+                        'theme-location' => 'kttv_primary_menu',
+                        'container' => false,
+                        'fallback_cb' => false,
+                        'depth' => 5,
+                        'walker' => new KTTV_Custom_Nav_Walker()
+                    ));
+                    // }
+                    ?>
+                </div>
+                <section class="copyright">
+                    @<?php echo date("Y"); ?> - All Right Reserved. Designed and Developed by <div class="copyright__tui">NDK</div>
+                </section>
+            </div>
+            <div class="navigation__body-veil"></div>
         </div>
     </div>
-    <section class="header__nav">
-        <div class="container">
-            <?php
-            // if(has_nav_menu('kttv_primary_menu')){
-            wp_nav_menu(array(
-                'theme-location' => 'kttv_primary_menu',
-                'container' => false,
-                'fallback_cb' => false,
-                'depth' => 5,
-                'walker' => new KTTV_Custom_Nav_Walker()
-            ));
-            // }
-            ?>
-        </div>
-    </section>
+    <?php
+    if (function_exists('yoast_breadcrumb') && !is_home() ) {
+        yoast_breadcrumb('<p id="breadcrumbs" class="breadcrumbs">', '</p>');
+    }
+    ?>

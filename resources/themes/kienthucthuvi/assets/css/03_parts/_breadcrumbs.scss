@@ -1,20 +1,8 @@
-// breadcrumbs
-
 .breadcrumbs {
-    //
-}
-
-.breadcrumbs__list {
-    //
-}
-
-.breadcrumbs__item {
-    //
-    &.is-last {
-        //
-    }
-}
-
-.breadcrumbs__link {
-    //
+  margin: 0 160px;
+  padding: 20px 0 0;
+  color: color(night-rider);
+  @include sp() {
+    margin: 0 20px;
+  }
 }

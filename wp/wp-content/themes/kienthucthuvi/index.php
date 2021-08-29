@@ -1,7 +1,5 @@
 <?php
 get_header();
-//wpb_set_post_views(get_the_ID());
- // wpb_get_post_views(get_the_ID());
 ?>
 
 <div class="container">
@@ -10,7 +8,11 @@ get_header();
             <section class="post">
                 <?php
                 $args_my_query = array(
-                    'post_type' => 'post'
+                    'post_type' => 'post',
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 5
                 );
                 $query = new WP_Query($args_my_query);
                 if ($query->have_posts()) :

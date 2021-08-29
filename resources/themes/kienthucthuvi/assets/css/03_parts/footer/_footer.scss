@@ -5,6 +5,9 @@
     grid-template-columns: auto auto auto;
     column-gap: 40px;
     padding: 60px 0 0;
+    @include sp() {
+      display: block;
+    }
   }
   &__title {
     color: color(white);
@@ -32,6 +35,14 @@
     font-size: 14px;
     line-height: 1.8;
   }
+  &__popular,
+  &__recent {
+    .footer__title {
+      @include sp() {
+        margin: 10px 0 0;
+      }
+    }
+  }
 }
 
 .copyright {
@@ -46,5 +57,46 @@
   &__tui {
     display: inline-block;
     color: color(white);
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: color(white);
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  transition: 0.5s;
+  &__icon {
+    color: color(white);
+    position: absolute;
+    width: 5px;
+    height: 18px;
+    background-color: currentColor;
+    margin: 5px 0 0;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: -4px;
+      width: 15px;
+      height: 15px;
+      border-top: solid 5px currentColor;
+      border-right: solid 5px currentColor;
+      transform: rotate(-45deg);
+    }
+  }
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  &--show {
+    opacity: 1;
   }
 }

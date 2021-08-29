@@ -1,7 +1,5 @@
 <?php
-if (function_exists('yoast_breadcrumb')) {
-    yoast_breadcrumb('<p id="breadcrumbs">', '</p>');
-}
+wpb_set_post_views (get_the_ID ()); 
 ?>
 <div class="detail__content">
     <div class="detail__title"><?php the_title() ?></div>
@@ -10,7 +8,12 @@ if (function_exists('yoast_breadcrumb')) {
             <div class="detail__author-avatar">
                 <?php echo get_avatar(get_the_author_meta('ID'), 40) ?>
             </div>
-            <div class="detail__author-name"><?php the_author() ?></div>
+            <div>
+                <div class="detail__author-name">
+                    <?php the_author() ?>
+                </div>
+                <div class="detail__date"><?php the_date('h:i:s d/m/Y'); ?></div>
+            </div>
         </div>
         <!-- <div>
             Chức vụ: -->
@@ -19,9 +22,9 @@ if (function_exists('yoast_breadcrumb')) {
         // echo $user_meta->roles[0];
         ?>
         <!-- </div> -->
-        <div>
-            <div class="detail__date"><?php the_date('d/m/Y'); ?></div>
-            <div class="detail__comment"><?php echo get_comments_number(get_the_ID()); ?></div>
+        <div class="detail__align-right">
+            <div class="detail__comment"><div class="detail__comment-icon"></div><?php echo get_comments_number(get_the_ID()); ?></div>
+            <div class="detail__views"><?php echo wpb_get_post_views (get_the_ID ());  ?></div>
         </div>
     </div>
 </div>
@@ -86,12 +89,13 @@ if (function_exists('yoast_breadcrumb')) {
     ?>
 </div>
 <div class="tags">
-    Tags:
     <?php the_tags('<div class="tags__list">', ' ', '</div>') ?>
 </div>
-<div class="category">
-    Categories:
-    <?php the_category(' ', '', '') ?>
+<div class="detail-category">
+    <div class="detail-category__title">Categories:</div>
+    <div class="detail-category__list">
+        <?php the_category(' ', '', '') ?>
+    </div>
 </div>
 
 <?php
