@@ -49,13 +49,13 @@
         </div>
     </section>
     <section class="comment-sidebar">
-        <div class="comment-sidebar__title">Bình luận</div>
+        <div class="comment-sidebar__title">Bình luận gần đây</div>
         <?php
         global $wp_query;
         $post_author_id = $wp_query->post->post_author;
         $args = array(
             'orderby' => 'comment_ID',
-            'number'    => '5'
+            'number'    => '10'
         );
         $comment_query = new WP_Comment_Query;
         $comments = $comment_query->query($args);
