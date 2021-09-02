@@ -6,3 +6,48 @@
     padding: unset;
   }
 }
+
+.comment-sidebar {
+  &__title {
+    color: color(white);
+    background: color(nero);
+    padding: 12px 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin: 40px 0 20px;
+  }
+  &__list-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 300px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: flex;
+    margin: 5px 0;
+    padding: 5px;
+    background: color(white-smoke);
+    border-radius: 20px;
+  }
+  &__item-transform {
+    transform: translateY(110%);
+  }
+  &__item-transition {
+    transition: transform 0.5s ease;
+  }
+  &__image-wrapper {
+    margin: 0 20px 0 0;
+  }
+  &__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  &__author {
+    color: color(blue);
+    font-weight: bold;
+  }
+}

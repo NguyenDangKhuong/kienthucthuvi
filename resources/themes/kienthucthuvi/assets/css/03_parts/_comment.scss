@@ -56,6 +56,10 @@
     padding: 10px 20px;
     border-radius: 5px;
   }
+  &__logout {
+    font-weight: 600;
+    color: color(navy);
+  }
 }
 
 .comment-list {
@@ -66,6 +70,9 @@
   &__title {
     font-size: 20px;
     font-weight: 700;
+  }
+  &__title-wrapper {
+    @extend %flex-center;
     margin: 0 0 20px;
   }
   &__avatar {

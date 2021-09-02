@@ -35,7 +35,7 @@ get_header();
             </section>
             <section class="news">
                 <div class="news__head">
-                    <a class="news__head-link">
+                    <a class="news__head-link" href="<?php echo site_url().'/category/news/'?>">
                         Tin tức
                     </a>
                 </div>
@@ -43,8 +43,8 @@ get_header();
                 $query = new WP_Query(array(
                     'post_type' => 'post',
                     'post_status' => 'publish',
-                    'cat' => 1,
-                    'orderby' => 'ID',
+                    'category_name' => 'news',
+                    'orderby' => 'date',
                     'order' => 'DESC',
                     'posts_per_page' => 6
                 ));
@@ -64,26 +64,26 @@ get_header();
                 ?>
             </section>
             <div class="dual-section">
-                <div class="investment">
-                    <div class="investment__head">
-                        <a class="investment__head-link">
-                            Đầu tư
+                <div class="share">
+                    <div class="share__head">
+                        <a class="share__head-link" href="<?php echo site_url().'/category/share/'?>">
+                            Chia sẻ
                         </a>
                     </div>
                     <?php
                     $query = new WP_Query(array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
-                        'cat' => 2,
-                        'orderby' => 'ID',
+                        'category_name' => 'share',
+                        'orderby' => 'date',
                         'order' => 'DESC',
                         'posts_per_page' => 4
                     ));
                     ?>
-                    <ul class="investment__list">
+                    <ul class="share__list">
                         <?php while ($query->have_posts()) : $query->the_post();
                             $args['query'] = $query;
-                            $args['type'] = 'investment';
+                            $args['type'] = 'share';
                             get_template_part('partials/content', 'index', $args);
                         ?>
                         <?php endwhile;
@@ -93,7 +93,7 @@ get_header();
                 </div>
                 <div class="tech">
                     <div class="tech__head">
-                        <a class="tech__head-link">
+                        <a class="tech__head-link" href="<?php echo site_url().'/category/tech/'?>">
                             Công nghệ
                         </a>
                     </div>
@@ -101,8 +101,8 @@ get_header();
                     $query = new WP_Query(array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
-                        'cat' => 2,
-                        'orderby' => 'ID',
+                        'category_name' => 'tech',
+                        'orderby' => 'date',
                         'order' => 'DESC',
                         'posts_per_page' => 4
                     ));

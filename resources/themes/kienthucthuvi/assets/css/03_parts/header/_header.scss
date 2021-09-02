@@ -242,7 +242,7 @@
       background: color(blue);
     }
     &:hover .menu__multi-level {
-      opacity: 1;
+      display: block;
     }
   }
 
@@ -267,17 +267,18 @@
   &__dropdown {
     position: absolute;
     border: 1px solid color(white-smoke);
-    opacity: 0;
+    display: none;
     &--show {
-      opacity: 1;
+      display: block;
     }
   }
   &__multi-level {
     top: 80px;
     left: 0;
     background: color(white);
+    box-shadow: 0 3px 4px color(gray);
     &:hover .menu__end-level {
-      opacity: 1;
+      display: block;
     }
     .menu__item {
       padding: 15px;
@@ -302,6 +303,7 @@
     left: 100%;
     top: 0;
     background: color(white);
+    box-shadow: 0 3px 4px color(gray);
     .menu__item {
       padding: 15px;
     }
@@ -338,11 +340,10 @@
     width: 25px;
     background: color(nero);
     border-radius: 9px;
-    opacity: 1;
     left: 0;
+    top: 10px;
     transform: rotate(0deg);
     transition: 0.25s ease-in-out;
-    top: 10px;
     &:nth-child(1) {
       transform: rotate(45deg);
     }
@@ -385,6 +386,10 @@
       padding: 15px 20px;
       border-bottom: 1px solid color(white-smoke);
       cursor: pointer;
+      @include sp() {
+        padding: 25px 20px;
+        font-size: 18px;
+      }
       &--active {
         color: initial;
         background: initial;
@@ -405,12 +410,15 @@
         content: '';
         position: absolute;
         right: 0;
-        top: 20px;
+        top: 22px;
         width: 0;
         height: 0;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 5px solid color(nero);
+        @include sp() {
+          top: 30px;
+        }
       }
     }
     &__dropdown {
@@ -420,6 +428,7 @@
       left: 0;
       display: none;
       transition: 0.5s;
+      box-shadow: unset;
       &--show {
         display: block;
       }

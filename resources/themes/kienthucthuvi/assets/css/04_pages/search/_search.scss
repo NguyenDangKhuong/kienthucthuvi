@@ -6,6 +6,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 1.4;
+    @extend %border-bottom-20;
   }
   &__item {
     overflow: hidden;
@@ -14,7 +15,7 @@
   &__link {
     display: flex;
     @include sp() {
-        display: block;
+      display: block;
     }
   }
   &__wrapper {
@@ -29,7 +30,7 @@
     width: 35%;
     margin: 0 20px 0 0;
     @include sp() {
-        width: 100%;
+      width: 100%;
     }
   }
   &__image {

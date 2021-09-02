@@ -1674,10 +1674,10 @@ function get_comment_reply_link( $args = array(), $comment = null, $post = null 
 	$defaults = array(
 		'add_below'     => 'comment',
 		'respond_id'    => 'respond',
-		'reply_text'    => __( 'Reply' ),
+		'reply_text'    => __( 'Trả lời' ),
 		/* translators: Comment reply button text. %s: Comment author name. */
-		'reply_to_text' => __( 'Reply to %s' ),
-		'login_text'    => __( 'Log in to Reply' ),
+		'reply_to_text' => __( 'Trả lời tới %s' ),
+		'login_text'    => __( 'Đăng nhập để trả lời' ),
 		'max_depth'     => 0,
 		'depth'         => 0,
 		'before'        => '',
@@ -2455,7 +2455,7 @@ function comment_form( $args = array(), $post_id = null ) {
 			'<p class="logged-in-as">%s</p>',
 			sprintf(
 				/* translators: 1: Edit user link, 2: Accessibility text, 3: User name, 4: Logout URL. */
-				__( '<a href="%1$s" aria-label="%2$s">Logged in as %3$s</a>. <a href="%4$s">Log out?</a>' ),
+				__( '<a href="%1$s" aria-label="%2$s">Đang đăng nhập bằng tài khoản <span class="comment__logout">%3$s</span></a>. <a class="comment__logout" href="%4$s">Bạn có muốn đăng xuất?</a>' ),
 				get_edit_user_link(),
 				/* translators: %s: User name. */
 				esc_attr( sprintf( __( 'Logged in as %s. Edit your profile.' ), $user_identity ) ),
@@ -2487,7 +2487,7 @@ function comment_form( $args = array(), $post_id = null ) {
 		'title_reply_after'    => '</h3>',
 		'cancel_reply_before'  => ' <small>',
 		'cancel_reply_after'   => '</small>',
-		'cancel_reply_link'    => __( 'Cancel reply' ),
+		'cancel_reply_link'    => __( 'Huỷ trả lời' ),
 		'label_submit'         => __( 'Post Comment' ),
 		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
 		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',

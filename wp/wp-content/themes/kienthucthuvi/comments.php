@@ -34,15 +34,17 @@ function kttv_show_comment($comment, $args, $depth)
 }
 ?>
 <div class="comment-list">
-    <h4 class="comment-list__title">
-        <?php
-        comments_number(
-            'Không có bình luận',
-            '1 bình luận',
-            '% bình luận'
-        )
-        ?>
-    </h4>
+    <div class="comment-list__title-wrapper">
+        <h4 class="comment-list__title">
+            <?php
+            comments_number(
+                'Không có bình luận',
+                '1 bình luận',
+                '% bình luận'
+            )
+            ?>
+        </h4>
+    </div>
     <ul class="comment-list__list">
         <?php wp_list_comments(array('callback' => 'kttv_show_comment')); ?>
     </ul>
@@ -61,13 +63,13 @@ function kttv_show_comment($comment, $args, $depth)
     <?php endif; ?>
 
     <?php
-    if(!comments_open()): 
+    if (!comments_open()) :
     ?>
-    <h4>
-        Chúng tôi xin lỗi, comment đã đóng.
-    </h4>
+        <h4>
+            Chúng tôi xin lỗi, comment đã đóng.
+        </h4>
     <?php
-    endif; 
+    endif;
     ?>
 </div>
 <div class="comment">

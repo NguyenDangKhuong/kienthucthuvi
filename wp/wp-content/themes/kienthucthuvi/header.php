@@ -2,6 +2,18 @@
 <html <?php language_attributes(); ?>>
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XSGBX71TSL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-XSGBX71TSL');
+    </script>
     <meta charset="<?php bloginfo('charset'); ?>">
     <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" id="js-viewport">
@@ -13,17 +25,17 @@
     <!-- <link rel="stylesheet" href="<?= URL_APP_CSS ?>"> -->
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat"> -->
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inter"> -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.1.0/dist/viewport-extra.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.1.0/dist/viewport-extra.min.js"></script>
     <!-- For 320px Viewport -->
-    <!-- <script>
+    <script>
         if (window.screen.width < 375) {
             document.getElementById('js-viewport').setAttribute('content', 'width=375, initial-scale=' + 320 / 375 + ', user-scalable=no');
         } else if (window.screen.width >= 375) {
             document.getElementById('js-viewport').setAttribute('content', 'width=375, initial-scale=1, user-scalable=yes');
         }
-    </script> -->
+    </script>
     <!-- IPAD VIEWPORT FIX -->
-    <!-- <script>
+    <script>
         var ua = navigator.userAgent
         var sp = (ua.indexOf('iPhone') > 0 || ua.indexOf('Android') > 0 && ua.indexOf('Mobile') > 0)
         var tab = (ua.indexOf('iPad') > 0 || (!sp && ua.indexOf('Android') > 0))
@@ -33,7 +45,7 @@
         if(isIOS && checkVersion.test(navigator.userAgent) ) {
             document.querySelector("meta[name='viewport']").setAttribute('content', 'width=1300');
         }
-    </script>  -->
+    </script> 
     <?php wp_head(); ?>
 
 </head>
@@ -112,7 +124,7 @@
         </div>
     </div>
     <?php
-    if (function_exists('yoast_breadcrumb') && !is_home() ) {
+    if (function_exists('yoast_breadcrumb') && !is_home()) {
         yoast_breadcrumb('<p id="breadcrumbs" class="breadcrumbs">', '</p>');
     }
     ?>

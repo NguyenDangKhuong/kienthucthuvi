@@ -1,8 +1,5 @@
-<?php
-wpb_set_post_views (get_the_ID ()); 
-?>
 <div class="detail__content">
-    <div class="detail__title"><?php the_title() ?></div>
+    <h1 class="detail__title"><?php the_title() ?></h1>
     <div class="detail__head">
         <div class="detail__author">
             <div class="detail__author-avatar">
@@ -23,8 +20,10 @@ wpb_set_post_views (get_the_ID ());
         ?>
         <!-- </div> -->
         <div class="detail__align-right">
-            <div class="detail__comment"><div class="detail__comment-icon"></div><?php echo get_comments_number(get_the_ID()); ?></div>
-            <div class="detail__views"><?php echo wpb_get_post_views (get_the_ID ());  ?></div>
+            <div class="detail__comment">
+                <div class="detail__comment-icon"></div><?php echo get_comments_number(get_the_ID()); ?>
+            </div>
+            <div class="detail__views"><?= gt_get_post_view(); ?></div>
         </div>
     </div>
 </div>
@@ -37,7 +36,65 @@ wpb_set_post_views (get_the_ID ());
     // wp_link_pages();
     ?>
 </div>
-<div class="relation">
+
+<div class="tags">
+    <?php the_tags('<div class="tags__list">', ' ', '</div>') ?>
+</div>
+<div class="share-social">
+    <div class="share-social__title">Nếu bạn thích bài viết này, hãy chia sẽ trên:</div>
+    <ul class="share-social__list">
+        <li class="share-social__item">
+            <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()) ?>">
+                <div class="share-social__item-wrapper share-social__item-facebook">
+                    <img src="/wp-content/themes/kienthucthuvi/assets/svg/share/facebook.svg" />
+                </div>
+            </a>
+        </li>
+        <li class="share-social__item">
+            <a target="_blank" href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()) ?>">
+                <div class="share-social__item-wrapper share-social__item-twitter">
+                    <img src="/wp-content/themes/kienthucthuvi/assets/svg/share/twitter.svg" />
+                </div>
+            </a>
+        </li>
+        <li class="share-social__item">
+            <a target="_blank" href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo urlencode(get_permalink()) ?>">
+                <div class="share-social__item-wrapper share-social__item-linkedin">
+                    <img src="/wp-content/themes/kienthucthuvi/assets/svg/share/linkedin.svg" />
+                </div>
+            </a>
+        </li>
+        <li class="share-social__item">
+            <a target="_blank" href="https://pinterest.com/pin/create/bookmarklet/?media=[post-img]&url=<?php echo urlencode(get_permalink()) ?>">
+                <div class="share-social__item-wrapper share-social__item-pinterest">
+                    <img src="/wp-content/themes/kienthucthuvi/assets/svg/share/pinterest.svg" />
+                </div>
+            </a>
+        </li>
+        <li class="share-social__item">
+            <a target="_blank" href="whatsapp://send?text=<?php echo urlencode(get_permalink()) ?>">
+                <div class="share-social__item-wrapper share-social__item-whatsapp">
+                    <img src="/wp-content/themes/kienthucthuvi/assets/svg/share/whatsapp.svg" />
+                </div>
+            </a>
+        </li>
+        <li class="share-social__item">
+            <a target="_blank" href="http://www.reddit.com/submit?url=<?php echo urlencode(get_permalink()) ?>">
+                <div class="share-social__item-wrapper share-social__item-reddit">
+                    <img src="/wp-content/themes/kienthucthuvi/assets/svg/share/reddit.svg" />
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+<div class="detail-category">
+    <div class="detail-category__title">Categories:</div>
+    <div class="detail-category__list">
+        <?php the_category(' ', '', '') ?>
+    </div>
+</div>
+
+<div class="related">
     <?php
     $post_not_in_id = array();
     array_push($post_not_in_id, get_the_ID());
@@ -51,9 +108,9 @@ wpb_set_post_views (get_the_ID ());
     foreach ($tags as $tag) {
         array_push($tag_id_list, $tag->term_id);
     }
-    $rl_posts_query = new WP_Query([
+    $query = new WP_Query([
         'post_type' => 'post',
-        'posts_per_page'     => 2,
+        'posts_per_page'     => 4,
         'post__not_in'      => $post_not_in_id,
         'tax_query' => [
             'relation' => 'OR',
@@ -73,13 +130,19 @@ wpb_set_post_views (get_the_ID ());
             ]
         ]
     ]);
-    if ($rl_posts_query->have_posts()) :
+    if ($query->have_posts()) :
     ?>
-        <ul class="post__list">
+        <div class="related__main-title">Bài viết liên quan</div>
+        <div class="related__slider-nav">
+            <div class="related__btn related__prev"></div>
+            <div class="related__btn related__next"></div>
+        </div>
+        <ul class="related__list">
             <?php
-            while ($rl_posts_query->have_posts()) :
-                $rl_posts_query->the_post();
-                get_template_part('partials/content', 'index-primary-item');
+            while ($query->have_posts()) : $query->the_post();
+                $args['query'] = $query;
+                $args['type'] = 'related';
+                get_template_part('partials/content', 'index', $args);
             endwhile;
             ?>
         </ul>
@@ -87,15 +150,6 @@ wpb_set_post_views (get_the_ID ());
     endif;
     wp_reset_query();
     ?>
-</div>
-<div class="tags">
-    <?php the_tags('<div class="tags__list">', ' ', '</div>') ?>
-</div>
-<div class="detail-category">
-    <div class="detail-category__title">Categories:</div>
-    <div class="detail-category__list">
-        <?php the_category(' ', '', '') ?>
-    </div>
 </div>
 
 <?php

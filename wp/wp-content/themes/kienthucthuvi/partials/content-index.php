@@ -13,7 +13,7 @@ $type = $args['type'];
                 <div class="<?php echo $type; ?>__wrapper">
                     <div class="<?php echo $type; ?>__author"><?php the_author(); ?></div>
                     <div class="<?php echo $type; ?>__date">
-                        <span><?php the_date('d/m/Y'); ?></span>
+                        <?php echo get_the_date('d/m/Y'); ?>
                     </div>
                     <div class="<?php echo $type; ?>__comment">
                         <span class="<?php echo $type; ?>__comment-wrapper">
