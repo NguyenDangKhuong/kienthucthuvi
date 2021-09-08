@@ -6,7 +6,7 @@
 }
 
 .content {
-  margin: 30px 0 0;
+  margin: 50px 0 0;
   display: flex;
   @include sp() {
     display: block;
@@ -15,7 +15,7 @@
 
 .main {
   width: 70%;
-  padding: 0 15px 0 0;
+  padding: 0 25px 0 0;
   @include sp() {
     width: 100%;
     padding: unset;
@@ -178,12 +178,24 @@
 }
 
 .post {
+  &__head {
+    border-bottom: 2px solid color(blue);
+    margin: 0 0 30px;
+  }
+  &__head-link {
+    display: inline-block;
+    padding: 10px 15px;
+    color: color(white);
+    background-color: color(blue);
+    cursor: pointer;
+    font-weight: 400;
+  }
   &__list {
     display: grid;
     grid-template:
       'prm1 prm1 prm2'
       'snd1 snd2 snd3' / 1fr 1fr 1fr;
-    column-gap: 20px;
+    column-gap: 30px;
     @include sp() {
       display: block;
     }
@@ -246,7 +258,7 @@
   &__list {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 20px;
+    column-gap: 30px;
     @include sp() {
       display: block;
     }
@@ -307,7 +319,7 @@
 }
 
 .share {
-  margin: 60px 10px 0 0;
+  margin: 60px 15px 0 0;
   width: 50%;
   @include sp() {
     margin: 40px 0 0;
@@ -369,7 +381,7 @@
 }
 
 .tech {
-  margin: 60px 0 0 10px;
+  margin: 60px 0 0 15px;
   width: 50%;
   @include sp() {
     margin: 40px 0 0;

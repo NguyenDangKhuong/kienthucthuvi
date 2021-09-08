@@ -6,6 +6,11 @@ get_header();
     <div class="content">
         <div class="main">
             <section class="post">
+                <div class="post__head">
+                    <a class="post__head-link" href="#">
+                        BÀI VIẾT MỚI NHẤT
+                    </a>
+                </div>
                 <?php
                 $args_my_query = array(
                     'post_type' => 'post',
@@ -35,8 +40,8 @@ get_header();
             </section>
             <section class="news">
                 <div class="news__head">
-                    <a class="news__head-link" href="<?php echo site_url().'/category/news/'?>">
-                        Tin tức
+                    <a class="news__head-link" href="<?php echo site_url() . '/category/news/' ?>">
+                        TIN TỨC
                     </a>
                 </div>
                 <?php
@@ -66,8 +71,8 @@ get_header();
             <div class="dual-section">
                 <div class="share">
                     <div class="share__head">
-                        <a class="share__head-link" href="<?php echo site_url().'/category/share/'?>">
-                            Chia sẻ
+                        <a class="share__head-link" href="<?php echo site_url() . '/category/share/' ?>">
+                            CHIA SẺ
                         </a>
                     </div>
                     <?php
@@ -93,8 +98,8 @@ get_header();
                 </div>
                 <div class="tech">
                     <div class="tech__head">
-                        <a class="tech__head-link" href="<?php echo site_url().'/category/tech/'?>">
-                            Công nghệ
+                        <a class="tech__head-link" href="<?php echo site_url() . '/category/tech/' ?>">
+                            CÔNG NGHỆ
                         </a>
                     </div>
                     <?php
