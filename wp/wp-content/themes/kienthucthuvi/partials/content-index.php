@@ -9,7 +9,7 @@ $type = $args['type'];
                 <div class="<?php echo $type; ?>__image" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id()) ?>')"></div>
             </div>
             <div class="<?php echo $type; ?>__info">
-                <div class="<?php echo $type; ?>__title"><?php the_title(); ?></div>
+                <h3 class="<?php echo $type; ?>__title"><?php the_title(); ?></h3>
                 <div class="<?php echo $type; ?>__wrapper">
                     <div class="<?php echo $type; ?>__author"><?php the_author(); ?></div>
                     <div class="<?php echo $type; ?>__date">

@@ -1,4 +1,11 @@
 //reset extra
+body {
+  min-width: 1280px;
+  @include sp() {
+    max-width: unset;
+  }
+}
+
 a {
   text-decoration: none;
   color: inherit;

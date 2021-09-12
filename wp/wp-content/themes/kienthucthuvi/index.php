@@ -6,11 +6,11 @@ get_header();
     <div class="content">
         <div class="main">
             <section class="post">
-                <div class="post__head">
+                <h2 class="post__head">
                     <a class="post__head-link" href="#">
                         BÀI VIẾT MỚI NHẤT
                     </a>
-                </div>
+                </h2>
                 <?php
                 $args_my_query = array(
                     'post_type' => 'post',
@@ -39,11 +39,11 @@ get_header();
                 ?>
             </section>
             <section class="news">
-                <div class="news__head">
+                <h2 class="news__head">
                     <a class="news__head-link" href="<?php echo site_url() . '/category/news/' ?>">
                         TIN TỨC
                     </a>
-                </div>
+                </h2>
                 <?php
                 $query = new WP_Query(array(
                     'post_type' => 'post',
@@ -70,11 +70,11 @@ get_header();
             </section>
             <div class="dual-section">
                 <div class="share">
-                    <div class="share__head">
+                    <h2 class="share__head">
                         <a class="share__head-link" href="<?php echo site_url() . '/category/share/' ?>">
                             CHIA SẺ
                         </a>
-                    </div>
+                    </h2>
                     <?php
                     $query = new WP_Query(array(
                         'post_type' => 'post',
@@ -96,26 +96,26 @@ get_header();
                         ?>
                     </ul>
                 </div>
-                <div class="tech">
-                    <div class="tech__head">
-                        <a class="tech__head-link" href="<?php echo site_url() . '/category/tech/' ?>">
-                            CÔNG NGHỆ
+                <div class="skill">
+                    <h2 class="skill__head">
+                        <a class="skill__head-link" href="<?php echo site_url() . '/category/skill/' ?>">
+                            THỦ THUẬT
                         </a>
-                    </div>
+                    </h2>
                     <?php
                     $query = new WP_Query(array(
                         'post_type' => 'post',
                         'post_status' => 'publish',
-                        'category_name' => 'tech',
+                        'category_name' => 'skill',
                         'orderby' => 'date',
                         'order' => 'DESC',
                         'posts_per_page' => 4
                     ));
                     ?>
-                    <ul class="tech__list">
+                    <ul class="skill__list">
                         <?php while ($query->have_posts()) : $query->the_post();
                             $args['query'] = $query;
-                            $args['type'] = 'tech';
+                            $args['type'] = 'skill';
                             get_template_part('partials/content', 'index', $args);
                         ?>
                         <?php endwhile;
