@@ -45,7 +45,7 @@
   &__author-name {
     font-size: 1rem;
     text-rendering: optimizelegibility;
-    color: color(navy);
+    color: color(blue);
     font-weight: 700;
     line-height: 20px;
     &:before {
@@ -56,6 +56,56 @@
   }
   &__post {
     padding: 0 0 20px 0;
+    h1 {
+      font-size: 2em;
+    }
+  
+    h2 {
+      font-size: 1.5em;
+    }
+  
+    h3 {
+      font-size: 1.17em;
+    }
+  
+    h4 {
+      font-size: 1.17em;
+    }
+  
+    h5 {
+      font-size: 0.83em;
+    }
+  
+    h6 {
+      font-size: 0.67em;
+    }
+  
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: bold;
+      margin: 20px 0;
+    }
+  
+    img {
+      margin: 20px 0;
+    }
+  
+    p {
+      line-height: 28px;
+      font-size: 16px;
+    }
+  
+    strong {
+      font-weight: bold;
+    }
+    a {
+      text-decoration: underline;
+      color: blue;
+    }
   }
   &__comment {
     font-size: 14px;
@@ -150,52 +200,6 @@
         color: color(nero);
       }
     }
-  }
-  h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  h3 {
-    font-size: 1.17em;
-  }
-
-  h4 {
-    font-size: 1.17em;
-  }
-
-  h5 {
-    font-size: 0.83em;
-  }
-
-  h6 {
-    font-size: 0.67em;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: bold;
-    margin: 20px 0;
-  }
-
-  img {
-    margin: 20px 0;
-  }
-
-  p {
-    line-height: 28px;
-    font-size: 16px;
-  }
-
-  strong {
-    font-weight: bold;
   }
 }
 

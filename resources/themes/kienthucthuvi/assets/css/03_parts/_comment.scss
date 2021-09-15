@@ -50,15 +50,15 @@
   }
   &__button {
     color: #fff;
-    background-color: color(navy);
-    border-color: color(navy);
+    background-color: color(blue);
+    border-color: color(blue);
     margin: 10px 0 0;
     padding: 10px 20px;
     border-radius: 5px;
   }
   &__logout {
     font-weight: 600;
-    color: color(navy);
+    color: color(blue);
   }
 }
 
@@ -94,7 +94,7 @@
     border-radius: 5px;
   }
   &__name {
-    color: color(navy);
+    color: color(blue);
   }
   &__flex {
     display: flex;

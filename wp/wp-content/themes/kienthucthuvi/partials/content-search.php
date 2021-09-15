@@ -1,3 +1,4 @@
+
 <li class="search__item">
     <a class="search__link" href="<?php the_permalink(); ?>">
         <div class="search__image-wrapper">

@@ -70,7 +70,7 @@
       position: absolute;
       height: 12px;
       width: 3px;
-      background: #000;
+      background: color(nero);
       transform: translate(6px, 6px) rotate(315deg);
       transition: 0.2s ease-in-out;
     }
@@ -79,7 +79,7 @@
       position: absolute;
       width: 15px;
       height: 15px;
-      border: 3px solid #000;
+      border: 3px solid color(nero);
       border-radius: 50%;
       transform: translate(-4px, -4px);
     }

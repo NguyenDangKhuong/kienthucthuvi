@@ -124,6 +124,38 @@ get_header();
                     </ul>
                 </div>
             </div>
+            <div class="tech">
+                <h2 class="tech__head">
+                    <a class="tech__head-link" href="<?php echo site_url() . '/category/tech/' ?>">
+                        CÔNG NGHỆ
+                    </a>
+                </h2>
+                <?php
+                $query = new WP_Query(array(
+                    'post_type' => 'post',
+                    'post_status' => 'publish',
+                    'category_name' => 'tech',
+                    'orderby' => 'date',
+                    'order' => 'DESC',
+                    'posts_per_page' => 5
+                ));
+
+                if ($query->have_posts()) :
+                ?>
+                    <ul class="tech__list">
+                        <?php while ($query->have_posts()) : $query->the_post();
+                            get_template_part('partials/content', 'search');
+                        ?>
+                        <?php endwhile;
+                        wp_reset_query();
+                        ?>
+                    </ul>
+
+                <?php
+                endif;
+                wp_reset_query();
+                ?>
+            </div>
         </div>
 
         <?php
