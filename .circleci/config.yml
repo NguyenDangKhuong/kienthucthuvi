@@ -1,11 +1,14 @@
 
 version: 2.1
-test:  
-  override:
-    - "true"
-    
-deployment:
-  production:
-    branch: master
-    commands:
-      - scp -r wp/wp-content/themes/kienthucthuvi root@45.76.160.102:/home/admin/web/kienthucthuvi.org/public_html/wp-content/themes/
+jobs:   
+  deploy-production-nha:
+    machine: true
+    steps:
+      - run:
+          name: Deploy server nha nha
+          command: scp -r wp/wp-content/themes/kienthucthuvi root@45.76.160.102:/home/admin/web/kienthucthuvi.org/public_html/wp-content/themes/
+
+workflows:
+  deploy-production:
+    jobs:
+      - deploy-production-nha
