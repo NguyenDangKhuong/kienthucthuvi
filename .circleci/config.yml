@@ -9,7 +9,7 @@ jobs:
             - "a7:43:06:c4:3b:82:39:7b:0e:19:d5:33:2e:1c:37:e3"
       - run:
           name: Access server nha
-          command: ssh -o StrictHostKeyChecking=no -v root@45.76.160.102
+          command: ssh -oStrictHostKeyChecking=no root@45.76.160.102
       - run:
           name: Deploy server nha
           command: scp -r wp/wp-content/themes/kienthucthuvi root@45.76.160.102:/home/admin/web/kienthucthuvi.org/public_html/wp-content/themes/
