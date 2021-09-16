@@ -2,7 +2,8 @@
 version: 2.1
 jobs:   
   deploy-production-nha:
-    machine: true
+    docker: 
+      - image: circleci/php:7.4-node-browsers
     steps:
       - add_ssh_keys:
             fingerprints:
