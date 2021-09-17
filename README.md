@@ -1,8 +1,8 @@
-# LIG WordPress Sample Theme 
+# NDK WordPress Sample Theme 
 
-**Theme Name:** LIG WordPress Template  
-**Theme URI:** https://github.com/liginc/lig-wordpress-template  
-**Contributors:** LIG inc  
+**Theme Name:** Kien thuc thu vi 
+**Theme URI:** 
+**Contributors:** 
 **Requires at least:** WordPress 5.5.2
 **Version:** 0.3 
 **License:** GPLv2 or later  
@@ -14,13 +14,6 @@
 The theme is scratch to start developing original theme.  
 
 ## Copyright
-
-LIG WordPress Template, Copyright 2019 LIG inc
-LIG WordPress Template is distributed under the terms of the GNU GPL.
-
-LIG WordPress Template bundles the following third-party resources:
-
-_s, Copyright 2015-2018 Automattic, Inc. 
 
 **License:** GPLv2 or later
 Source: https://github.com/Automattic/_s/
