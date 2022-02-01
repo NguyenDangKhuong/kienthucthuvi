@@ -21,8 +21,6 @@
     <link rel="icon" href="/wp-content/themes/kienthucthuvi/assets/images/favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/images/favicon.png">
-    <!-- <link rel="apple-touch-icon-precomposed" href="<?= URL_TOUCH_ICON ?>"> -->
-    <!-- <link rel="stylesheet" href="<?= URL_APP_CSS ?>"> -->
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Montserrat"> -->
     <!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Inter"> -->
     <script src="https://cdn.jsdelivr.net/npm/viewport-extra@1.1.0/dist/viewport-extra.min.js"></script>
