@@ -25,6 +25,10 @@ mix
   .sass(
     `${srcRelativePath}/assets/css/app.scss`,
     `${distRelativePath}/assets/css`
+    )
+  .sass(
+    `${srcRelativePath}/assets/css/04_pages/portfolio/_portfolio.scss`,
+    `${distRelativePath}/assets/css`
   )
   .stylelint({ context: srcRelativePath })
   .options({ processCssUrls: false })
