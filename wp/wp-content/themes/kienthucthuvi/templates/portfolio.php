@@ -12,7 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="/wp-content/themes/kienthucthuvi/assets/images/portfolio/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/wp-content/themes/kienthucthuvi/assets/images/portfolio/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/wp-content/themes/kienthucthuvi/assets/css/_portfolio.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/wp-content/themes/kienthucthuvi/assets/css/portfolio.css" type="text/css" media="all">
   <link rel="stylesheet" href="/wp-content/themes/kienthucthuvi/css/mouse.css" type="text/css" media="all">
   <title>Nguyen Khuong 's portfolio</title>
 </head>

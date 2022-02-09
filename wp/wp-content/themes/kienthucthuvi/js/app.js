@@ -35,7 +35,6 @@ window.onload = function () {
     })
   ).done(() => {
     const characters = document.querySelectorAll('.portfolio__char-animation')
-    console.log(characters)
     if (characters.length) {
       characters.forEach(item => {
         item.addEventListener('mouseover', () => {

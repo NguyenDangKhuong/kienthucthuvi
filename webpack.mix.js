@@ -27,7 +27,7 @@ mix
     `${distRelativePath}/assets/css`
     )
   .sass(
-    `${srcRelativePath}/assets/css/04_pages/portfolio/_portfolio.scss`,
+    `${srcRelativePath}/assets/css/04_pages/portfolio/portfolio.scss`,
     `${distRelativePath}/assets/css`
   )
   .stylelint({ context: srcRelativePath })
