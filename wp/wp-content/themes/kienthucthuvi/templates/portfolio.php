@@ -17,7 +17,7 @@
   <title>Nguyen Khuong 's portfolio</title>
 </head>
 
-<body>
+<body class="body-portfolio">
   <div class="portfolio">
     <div class="mouse__effect">
       <canvas class="banner_canvas" id="canvas_banner"></canvas>
@@ -59,7 +59,7 @@
         I build things for the web.
       </div>
       <h3 class="portfolio__explain">
-        I 'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products at Upstatement.
+        I 'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products.
       </h3>
       <a href="#contact" class="portfolio__contact-btn">
         Contact me

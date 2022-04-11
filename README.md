@@ -9,6 +9,10 @@
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** scratch  
 
+## Run local
+
+`docker-compose up`
+
 ## Description
 
 The theme is scratch to start developing original theme.  
