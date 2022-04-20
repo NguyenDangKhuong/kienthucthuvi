@@ -1,4 +1,6 @@
-# NDK WordPress Sample Theme 
+# NDK WordPress Page
+
+[https://kienthucthuvi.org/](https://kienthucthuvi.org/)
 
 **Theme Name:** Kien thuc thu vi 
 **Theme URI:** 
