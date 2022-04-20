@@ -2,6 +2,8 @@
 
 [https://kienthucthuvi.org/](https://kienthucthuvi.org/)
 
+This project already have config CI-CD with circle-ci and docker
+
 **Theme Name:** Kien thuc thu vi 
 **Theme URI:** 
 **Contributors:** 
