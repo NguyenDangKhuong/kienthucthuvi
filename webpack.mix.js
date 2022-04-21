@@ -30,6 +30,10 @@ mix
     `${srcRelativePath}/assets/css/04_pages/portfolio/portfolio.scss`,
     `${distRelativePath}/assets/css`
   )
+  .sass(
+    `${srcRelativePath}/assets/css/04_pages/cv/cv.scss`,
+    `${distRelativePath}/assets/css`
+  )
   .stylelint({ context: srcRelativePath })
   .options({ processCssUrls: false })
   .webpackConfig({
